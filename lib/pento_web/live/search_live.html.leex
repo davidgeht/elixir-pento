@@ -1,0 +1,13 @@
+<h2>Search Your SKU number</h2>
+
+<%= f = form_for @changeset, "#",
+id: "search-form",
+phx_change: "search",
+phx_submit: "save"
+ %>
+
+<%= label f, :sku %>
+<%= text_input f, :sku, phx_debounce: "blur"%>
+<%= error_tag f, :sku %>
+
+<%= submit "Search", phx_disable_with: "Searching SKU..." %>
